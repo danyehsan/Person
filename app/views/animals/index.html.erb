@@ -1,0 +1,14 @@
+<h1>All Animals</h1>
+<%= link_to '<button type ="button">Add Animal</button>'.html_safe, new_animal_path %>
+</br>
+</br>
+<% @animals.each do |animal|%>
+</br>
+<%= animal.name %>
+</br>
+<%= link_to '<button type="button">Show</button>'.html_safe, animal_path(animal.id)%>
+
+<%= link_to '<button type="button">Edit</button>'.html_safe, edit_animal_path(animal.id)%>
+
+<%= link_to '<button type="button">Delete</button>'.html_safe, animal_path(animal.id), method: :delete %>
+<%end%>
